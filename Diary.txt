@@ -1,0 +1,130 @@
+EDU>> workpref=nominal({'both work'; 'both work'; 'both work';
+'one works'; 'one works'; 'one works'; 'one works';
+'one works'; 'one works'; 'one works'; 'one works';
+'one works'; 'neither work'; 'neither work'; 'no opinion'})
+workpref = 
+     both work 
+     both work 
+     both work 
+     one works 
+     one works 
+     one works 
+     one works 
+     one works 
+     one works 
+     one works 
+     one works 
+     one works 
+     neither work 
+     neither work 
+     no opinion 
+EDU>> tabulate(workpref)
+         Value    Count   Percent
+     both work        3     20.00%
+  neither work        2     13.33%
+    no opinion        1      6.67%
+     one works        9     60.00%
+EDU>> 
+pie(levelcounts(workpref), getlabels(workpref))
+EDU>> 
+bar(levelcounts(workpref)), set(gca,'XTickLabel', getlabels(workpref))
+EDU>> workpref1991=[14;4;1;27]
+workpref1991 =
+    14
+     4
+     1
+    27
+EDU>> m=[workpref1991,levelcounts(workpref)]
+m =
+    14     3
+     4     2
+     1     1
+    27     9
+EDU>> 
+bar(m','stacked')
+EDU>> m=[workpref1991./sum(workpref1991)*100,levelcounts(workpref)./sum(levelcounts(workpref))*100]
+m =
+  30.434782608695656  20.000000000000000
+   8.695652173913043  13.333333333333334
+   2.173913043478261   6.666666666666667
+  58.695652173913047  60.000000000000000
+EDU>> 
+bar(m','stacked')
+EDU>> hp=[155;142; 125; 150; 68; 95; 97; 75; 103; 125; 115;
+133; 105; 85; 110; 120; 130; 129; 138; 135; 88; 109; 65; 80; 80;
+71; 68; 90; 115; 115; 90; 70; 65; 69; 78; 97; 110; 71]
+hp =
+   155
+   142
+   125
+   150
+    68
+    95
+    97
+    75
+   103
+   125
+   115
+   133
+   105
+    85
+   110
+   120
+   130
+   129
+   138
+   135
+    88
+   109
+    65
+    80
+    80
+    71
+    68
+    90
+   115
+   115
+    90
+    70
+    65
+    69
+    78
+    97
+   110
+    71
+EDU>> hist(hp)
+EDU>> 
+StemLeafPlot(hp) 
+  6 | 5 5 8 8 9
+  7 | 0 1 1 5 8
+  8 | 0 0 5 8
+  9 | 0 0 5 7 7
+ 10 | 3 5 9
+ 11 | 0 0 5 5 5
+ 12 | 0 5 5 9
+ 13 | 0 3 5 8
+ 14 | 2
+ 15 | 0 5
+EDU>> boxplot(hp)
+EDU>> age=[1 1 2 3 3 5 5 9 9 13]
+age =
+     1     1     2     3     3     5     5     9     9    13
+EDU>> price=[12995 10950 10495 10995 10998 8700 6995 3200 2250 1750]
+price =
+  Columns 1 through 7
+       12995       10950       10495       10995       10998        8700        6995
+  Columns 8 through 10
+        3200        2250        1750
+EDU>> scatter(age, price)
+EDU>> regstats(price,age)
+Variables have been created in the current workspace.
+EDU>> 
+beta, rsquare
+beta =
+  1.0e+004 *
+   1.297943478260869
+  -0.098953623188406
+rsquare =
+   0.918604485675819
+EDU>> scatter(age, r)
+EDU>> 
